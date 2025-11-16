@@ -8,21 +8,12 @@ int factorial(int k) {
 
 int permutations(int n, int r) {
   if (r > n) return 0;
-  int p = 1;
-  for (int i = 0; i < r; i++)
-    p *= (n - i);
-  return p;
+  return factorial(n) / factorial(n - r);
 }
 
 int combinations(int n, int r) {
   if (r > n) return 0;
-  int num = 1, den = 1;
-  for (int i = 0; i < r; i++) {
-    num *= (n - i);
-    den *= (i + 1);
-  }
-  return num / den;
+  return factorial(n) / (factorial(r) * factorial(n - r));
 }
 
 #endif
-

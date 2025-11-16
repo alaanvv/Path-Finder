@@ -57,4 +57,11 @@ RouteList find_all_routes(int start, int end, int n, Relation *r) {
   return out;
 }
 
+void routelist_free(RouteList* l) {
+  for (int i = 0; i < l->count; i++)
+    free(l->paths[i]);
+  free(l->paths);
+  free(l->sizes);
+}
+
 #endif
