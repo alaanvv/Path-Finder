@@ -1,4 +1,3 @@
-// TODO Limitar funcoes q recebem ID a usar so pontos de interesse
 // TODO refatorar essa grande merda
 // TODO comentar tudo
 // TODO fazer um readme
@@ -427,17 +426,28 @@ void main_menu() {
   }  
   else if (!strcmp(opt, "conn")) {
     scanf("%hu %hu", &a1, &a2);
-    relation_toggle(&r, a1, a2);
+    if (set_has(&points_of_interest, a1) && set_has(&points_of_interest, a2))
+      relation_toggle(&r, a1, a2);
+    else {
+      printf(RED BOLD "  Ponto de interesse não encontrado!\n" RESET);
+      sleep(1);
+    }
   }
   else if (!strcmp(opt, "routes")) {
     scanf("%hu %hu", &a1, &a2);
-    RouteList l = find_all_routes(a1, a2, n, &r);
-    draw_routes(l);
+    if (set_has(&points_of_interest, a1) && set_has(&points_of_interest, a2)) {
+      RouteList l = find_all_routes(a1, a2, n, &r);
+      draw_routes(l);
 
-    for (int i = 0; i < l.count; i++)
-      free(l.paths[i]);
-    free(l.paths);
-    free(l.sizes);
+      for (int i = 0; i < l.count; i++)
+        free(l.paths[i]);
+      free(l.paths);
+      free(l.sizes);
+    }
+    else {
+      printf(RED BOLD "  Ponto de interesse não encontrado\n" RESET);
+      sleep(1);
+    }
   }
   else if (!strcmp(opt, "count")) {
     int nn, rr;
