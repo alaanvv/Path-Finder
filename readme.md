@@ -39,10 +39,10 @@ Gravei uma demonstração do programa, acabei me esquecendo de usar o comando `d
 
 Existem duas flags especiais pra compilação
 
-- -DSAFE_CHARS - Use essa flag se quiser usar caracteres mais suportados, evitando quebrar em terminais mais limitados
-- -DNO_ANSI - Use essa flag se seu terminal não tiver suporte pra ANSI, assim o programa fica sem cores e `clear`
+- `-DSAFE_CHARS` - Use essa flag se quiser usar caracteres mais suportados, evitando quebrar em terminais mais limitados
+- `-DNO_ANSI` - Use essa flag se seu terminal não tiver suporte pra ANSI, assim o programa fica sem cores e limpeza de tela
 
-> Exemplo de como usar as flags:
+> Exemplo de como usar as flags:  
 `gcc src/main.c -o pathfinder-linux -lm -DSAFE_CHARS -DNO_ANSI`
 
 ## Como usar
