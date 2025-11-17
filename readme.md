@@ -1,11 +1,11 @@
 # Path-Finder
 
-Recomendo que leia esse `readme.md` pelo github pra ter o documento formatado, basta seguir esse link:  
-https://github.com/alaanvv/Path-Finder
-
 Um programa **C** que gerencia rotas entre cidades usando conceitos de grafos e matemática discreta.  
 
 - **IMPORTANTE** - Esse programa foi feito usando interface no terminal, então caso a janela do terminal esteja muito pequena, a visualização pode quebrar. Além disso, o programa foi feito pra terminais com suporte **ANSI**
+
+Recomendo que leia esse `readme.md` pelo github pra ter o documento formatado, basta seguir esse link:  
+https://github.com/alaanvv/Path-Finder
 
 ## Demo
 
