@@ -66,11 +66,12 @@ void draw_matrix(MatrixF* m, Set* filter, int scale) {
 }
 
 // Mostra os resultados da análise combinatória
-void draw_combinatorial(int n, int r, int c, int p) {
+void draw_combinatorial(int n, int r, int f, int c, int p) {
   // Mostra combinações e permutações
   PRINT(CLEAR);
   PRINT(BOLD "  C(%d, %d)" RESET " = %d", n, r, c);
   PRINT(BOLD "  P(%d, %d)" RESET " = %d", n, r, p);
+  PRINT(BOLD "  %d!" RESET " = %d", n,    f);
 
   // Aguarda input do usuário pra sair da tela
   printf("\n  << " BOLD "ENTER " RESET);

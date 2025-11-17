@@ -150,7 +150,7 @@ void draw_routes(RouteList l) {
     if (route_i == best_i) printf(BOLD GREEN "  (MENOR ROTA)" RESET);
 
     // Aguarda input do usuário pra passar pra próxima rota
-    printf("\n\n  << " BOLD "ENTER (%d/%d)" RESET, route_i+1, l.count);
+    printf("\n\n  << " BOLD "ENTER (%d/%d) " RESET, route_i+1, l.count);
     if (!route_i) scanf("%*c%*c");
     else scanf("%*c");
   }
@@ -211,7 +211,7 @@ void main_menu() {
   }
   else if (!strcmp(opt, "count")) {
     scanf("%hu %hu", &p1, &p2);
-    draw_combinatorial(p1, p2, combinations(p1, p2), permutations(p1, p2));
+    draw_combinatorial(p1, p2, factorial(p1), combinations(p1, p2), permutations(p1, p2));
   }
   else if (!strcmp(opt, "exit")) return;
 
