@@ -9,6 +9,7 @@ https://github.com/alaanvv/Path-Finder
 
 ## Demo
 
+Gravei uma demonstração do programa, acabei me esquecendo de usar o comando `dist`, mas ele está demonstrado mais pra frente nesse arquivo.
 > Clique pra assistir ou assista nos arquivos do projeto `(demo/demo.mp4)`
 
 [![Video](https://img.youtube.com/vi/VRC4jpsRCtY/maxresdefault.jpg)](https://www.youtube.com/watch?v=VRC4jpsRCtY)
