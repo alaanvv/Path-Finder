@@ -35,19 +35,19 @@ A primeira parte do programa é a seleção dos pontos de interesse,
 onde o usuário escolhe a partir dos pontos lidos do arquivo quais  
 ele vai querer usar no programa.
 
-()[]
+![](screenshots/setup.png)
 
 Basta digitar o número do ponto e apertar **ENTER** pra marcá-lo  
 Se o ponto já estiver marcado, ele desmarca.  
 
 > Os pontos marcados ficam destacados na visualização.
 
-()[]
+![](screenshots/marked.png)
 
 Após selecionar os pontos de interesse desejados, use o comando  
 `run` pra iniciar o gerenciamento de rotas.  
 
-()[]
+![](screenshots/graph.png)
 
 Nessa tela, apenas os pontos de interesse são mostrados, e temos  
 acesso aos comandos do programa.  
@@ -55,26 +55,26 @@ acesso aos comandos do programa.
 - `dist` - Calcula matriz de distâncias
 Após ver a matriz, aperte **ENTER** pra sair.
 
-()[]
+![](screenshots/dist.png)
 
 - `conn <id1> <id2>` - Conecta/desconecta dois pontos
 Digite `conn` e o índice dos pontos que você quer conectar.  
 Se você digitar o índice de pontos já conectados eles se desconectam.  
 Pontos conectados são mostrados com uma linha entre eles.
 
-()[]
+![](screenshots/conn.png)
 
 - `routes <id1> <id2>` - Calcula todas rotas entre duas cidades
 Digite `routes` e o índice dos pontos que você quer ver as rotas.  
 Isso vai mostrar todas as rotas possíveis, uma por vez, basta apertar  
 **ENTER** pra passar pra próxima.
 
-()[]
+![](screenshots/routes.png)
 
 Quando uma rota for a menor possível, será mostrado uma mensagem na  
 frente da distância total.  
 
-()[]
+![](screenshots/best.png)
 
 - `count <n> <r>` - Calcula combinações e permutações
 Digite `count` seguido dos valores `n` e `r`.
@@ -84,7 +84,7 @@ Mostra:
   - n!  (fatorial de n)
 Pra sair da tela, aperte **ENTER**.
 
-()[]
+![](screenshots/count.png)
 
 - `count <n> <r>` - Encerra o programa
 Fecha o programa
