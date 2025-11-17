@@ -2,15 +2,13 @@
 
 Recomendo que leia esse `readme.md` pelo github pra ter o documento  
 formatado, basta seguir esse link:  
-
 https://github.com/alaanvv/Path-Finder
 
 Um programa **C** que gerencia rotas entre cidades usando  
 conceitos de grafos e matemática discreta.  
 
-- **IMPORTANTE** - Esse programa foi feito usando interface no terminal
-
-Então caso a janela do terminal esteja muito pequena, a visualização pode   
+- **IMPORTANTE** - Esse programa foi feito usando interface no terminal,
+então caso a janela do terminal esteja muito pequena, a visualização pode   
 quebrar. 
 Além disso, o programa foi feito pra terminais com suporte **ANSI**
 
@@ -64,19 +62,19 @@ Após selecionar os pontos de interesse desejados, use o comando
 Nessa tela, apenas os pontos de interesse são mostrados, e temos  
 acesso aos comandos do programa.  
 
-- `dist` - Calcula matriz de distâncias
+- `dist` - Calcula matriz de distâncias  
 Após ver a matriz, aperte **ENTER** pra sair.
 
 ![](screenshots/dist.png)
 
-- `conn <id1> <id2>` - Conecta/desconecta dois pontos
+- `conn <id1> <id2>` - Conecta/desconecta dois pontos  
 Digite `conn` e o índice dos pontos que você quer conectar.  
 Se você digitar o índice de pontos já conectados eles se desconectam.  
 Pontos conectados são mostrados com uma linha entre eles.
 
 ![](screenshots/conn.png)
 
-- `routes <id1> <id2>` - Calcula todas rotas entre duas cidades
+- `routes <id1> <id2>` - Calcula todas rotas entre duas cidades  
 Digite `routes` e o índice dos pontos que você quer ver as rotas.  
 Isso vai mostrar todas as rotas possíveis, uma por vez, basta apertar  
 **ENTER** pra passar pra próxima.
@@ -88,7 +86,7 @@ frente da distância total.
 
 ![](screenshots/best.png)
 
-- `count <n> <r>` - Calcula combinações e permutações
+- `count <n> <r>` - Calcula combinações e permutações  
 Digite `count` seguido dos valores `n` e `r`.
 Mostra:
   - nPr (permutações de n tomados r)
@@ -98,7 +96,7 @@ Pra sair da tela, aperte **ENTER**.
 
 ![](screenshots/count.png)
 
-- `exit` - Encerra o programa
+- `exit` - Encerra o programa  
 Fecha o programa
 
 ## Como rodar
