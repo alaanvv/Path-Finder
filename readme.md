@@ -103,18 +103,18 @@ Fecha o programa
 ### Linux
 
 1. Compile
-`gcc src/main.c -o pathfinder -lm`
+`gcc src/main.c -o pathfinder-linux -lm`
 
 2. Execute
-`./pathfinder`
+`./pathfinder-linux`
 
 ### Windows
 
 1. Compile  
-`gcc src/main.c -o pathfinder.exe -lm`
+`gcc src/main.c -o pathfinder-windows.exe -lm`
 
 2. Execute  
-`pathfinder.exe`
+`pathfinder-windows.exe`
 
 ## TODO
 
