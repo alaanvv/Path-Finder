@@ -85,6 +85,12 @@ Nessa tela, apenas os pontos de interesse são mostrados, e temos acesso aos com
 
 ## Comandos
 
+- `coords` - Mostra as coordenadas de cada ponto  
+Após ver as coordenadas, aperte **ENTER** pra sair.
+
+![](screenshots/coords.png)
+
+
 - `dist` - Calcula matriz de distâncias  
 Após ver a matriz, aperte **ENTER** pra sair.
 
@@ -103,7 +109,9 @@ Pontos conectados são mostrados com uma linha entre eles.
 
 - `routes <id1> <id2>` - Calcula todas rotas entre duas cidades  
 Digite `routes` e o índice dos pontos que você quer ver as rotas.  
-Isso vai mostrar todas as rotas possíveis, uma por vez, basta apertar **ENTER** pra passar pra próxima.
+Isso vai mostrar todas as rotas possíveis.  
+Pra cada rota, será mostrada a distância total e a quantidade possível de permutações dos pontos intermediários.  
+Aperte **ENTER** pra passar pra próxima.
 
 ![](screenshots/routes.png)
 

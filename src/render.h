@@ -67,10 +67,9 @@ void draw_vertex(MatrixS* grid, Point p, int id, char* color, int mark) {
 void draw_matrix(MatrixF* m, Set* filter, int scale) {
   // Desenha os índices no topo
   printf(CLEAR "\n      " BOLD);
-  for (int v = 0; v < m->cols; v++) {
-    if (!set_has(filter, v)) continue;
-    printf(MAGENTA " %02d%*s ", v, scale / 2 - 3, "");
-  }
+  for (int v = 0; v < m->cols; v++)
+    if (set_has(filter, v))
+      printf(MAGENTA " %02d%*s ", v, scale / 2 - 3, "");
   printf("\n" RESET);
 
   for (int u = 0; u < m->rows; u++) {
@@ -101,6 +100,18 @@ void draw_combinatorial(int n, int r, int f, int c, int p) {
 
   // Aguarda input do usuário pra sair da tela
   printf("\n  << " BOLD "ENTER " RESET);
+  scanf("%*c%*c");
+}
+
+// Desenha as coordenadas dos pontos filtrados pelo conjunto filter
+void draw_coords(Point* points, int size, Set* filter) {
+  PRINT(CLEAR);
+  for (int i = 0; i < size; i++)
+    if (set_has(filter, i))
+      printf(MAGENTA BOLD "  %02d " RESET "= (%d, %d)\n\n", i, points[i].x, points[i].y);
+
+  // Aguarda input do usuário pra sair da tela
+  printf("  << " BOLD "ENTER " RESET);
   scanf("%*c%*c");
 }
 

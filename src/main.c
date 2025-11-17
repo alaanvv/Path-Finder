@@ -177,6 +177,8 @@ void draw_routes(RouteList l) {
     // Se a rota for a mais curta mostra uma mensagem
     if (route_i == best_i) printf(BOLD GREEN "  (MENOR ROTA)" RESET);
 
+    printf(BOLD "\n\n  Permutações:" RESET " %d", factorial(l.sizes[route_i] - 2));
+
     // Aguarda input do usuário pra passar pra próxima rota
     printf("\n\n  << " BOLD "ENTER (%d/%d) " RESET, route_i+1, l.count);
     if (!route_i) scanf("%*c%*c");
@@ -207,6 +209,7 @@ void setup_menu() {
 void main_menu() {
   draw_display(GRAPH, (RouteList){}, 0);
 
+  PRINT(BOLD "  coords                    " RESET "Mostra as coordenadas de cada ponto");
   PRINT(BOLD "  dist                      " RESET "Calcula matriz de distancias");
   PRINT(BOLD "  conn   <id1> <id2>        " RESET "Conecta/desconecta dois pontos");
   PRINT(BOLD "  routes <id1> <id2>        " RESET "Calcula todas rotas entre duas cidades");
@@ -220,7 +223,10 @@ void main_menu() {
  
   if (!strcmp(opt, "dist")) {
     draw_matrix(&distances, points_of_interest, X_SCALE);
-  }  
+  }   
+  else if (!strcmp(opt, "coord")) {
+    draw_coords(points, n, points_of_interest);
+  } 
   else if (!strcmp(opt, "conn")) {
     scanf("%hu %hu", &p1, &p2);
     if (set_has(points_of_interest, p1) && set_has(points_of_interest, p2))
