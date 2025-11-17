@@ -7,7 +7,7 @@ Um programa **C** que gerencia rotas entre cidades usando conceitos de grafos e 
 
 - **IMPORTANTE** - Esse programa foi feito usando interface no terminal, então caso a janela do terminal esteja muito pequena, a visualização pode quebrar. Além disso, o programa foi feito pra terminais com suporte **ANSI**
 
-# Demo
+## Demo
 
 > Clique pra assistir ou assista nos arquivos do projeto `(demo/demo.mp4)`
 
@@ -98,21 +98,23 @@ Fecha o programa
 
 ## Como rodar
 
+> Os executáveis já estão disponíveis nos arquivos, então o passo de compilar é opcional
+
 ### Linux
 
 1. Compile
-`gcc src/main.c -lm`
+`gcc src/main.c -o pathfinder -lm`
 
 2. Execute
-`./a.out`
+`./pathfinder`
 
 ### Windows
 
 1. Compile  
-`gcc src/main.c -lm`
+`gcc src/main.c -o pathfinder.exe -lm`
 
 2. Execute  
-`a.exe`
+`pathfinder.exe`
 
 ## TODO
 
