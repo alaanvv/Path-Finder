@@ -51,10 +51,14 @@ Após selecionar os pontos de interesse desejados, use o comando `run` pra inici
 
 Nessa tela, apenas os pontos de interesse são mostrados, e temos acesso aos comandos do programa.  
 
+## Comandos
+
 - `dist` - Calcula matriz de distâncias  
 Após ver a matriz, aperte **ENTER** pra sair.
 
 ![](screenshots/dist.png)
+
+---
 
 - `conn <id1> <id2>` - Conecta/desconecta dois pontos  
 Digite `conn` e o índice dos pontos que você quer conectar.  
@@ -62,6 +66,8 @@ Se você digitar o índice de pontos já conectados eles se desconectam.
 Pontos conectados são mostrados com uma linha entre eles.
 
 ![](screenshots/conn.png)
+
+---
 
 - `routes <id1> <id2>` - Calcula todas rotas entre duas cidades  
 Digite `routes` e o índice dos pontos que você quer ver as rotas.  
@@ -73,6 +79,8 @@ Quando uma rota for a menor possível, será mostrado uma mensagem na frente da 
 
 ![](screenshots/best.png)
 
+---
+
 - `count <n> <r>` - Calcula combinações e permutações  
 Digite `count` seguido dos valores `n` e `r`.
 Mostra:
@@ -82,6 +90,8 @@ Mostra:
 Pra sair da tela, aperte **ENTER**.
 
 ![](screenshots/count.png)
+
+---
 
 - `exit` - Encerra o programa  
 Fecha o programa
