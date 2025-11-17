@@ -1,5 +1,7 @@
 # Path-Finder
 
+Por: **Alan Vale**
+
 Um programa **C** que gerencia rotas entre cidades usando conceitos de grafos e matemática discreta.  
 
 - **IMPORTANTE** - Esse programa foi feito usando interface no terminal, então caso a janela do terminal esteja muito pequena, a visualização pode quebrar. Além disso, o programa foi feito pra terminais com suporte **ANSI**, mas tem uma flag de compilação que desativa os caracteres ANSI, descrita na seção "Como rodar"
