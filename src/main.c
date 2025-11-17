@@ -41,8 +41,9 @@ typedef int64_t  i64;
 typedef float    f32;
 typedef double   f64;
 
-#define X_SCALE    10
+#define X_SCALE     10
 #define Y_SCALE     5
+#define SAFE_CHARS  0
 
 typedef enum { SETUP, GRAPH, PATH } DisplayMode;
 
@@ -98,13 +99,13 @@ void draw_display(DisplayMode mode, RouteList l, int route_i) {
     }
 
   // Imprime o display no terminal
-  STR_REPEAT("\n  ", "▓", "\n", display.cols + 4);
+  STR_REPEAT("\n  ", SAFE_CHARS ? "#": "▓", "\n", display.cols + 4);
   for (int i = 0; i < display.rows; i++) {
-    printf("  ▓▓");
+    printf(SAFE_CHARS ? "  ##": "  ▓▓");
     for (int j = 0; j < display.cols; j++) printf("%s", matrixs_get(&display, i, j));
-    printf("▓▓\n");
+    printf(SAFE_CHARS ? "##\n": "▓▓\n");
   }
-  STR_REPEAT("  ", "▓", "\n\n", display.cols + 4);
+  STR_REPEAT("  ", SAFE_CHARS ? "#": "▓", "\n\n", display.cols + 4);
   matrixs_free(&display);
 }
 
@@ -145,7 +146,7 @@ void draw_routes(RouteList l) {
       }
     }
 
-    printf(BOLD "\n\n  Distância:" RESET " %.2f", total);
+    printf(BOLD "\n\n  Distancia:" RESET " %.2f", total);
     // Se a rota for a mais curta mostra uma mensagem
     if (route_i == best_i) printf(BOLD GREEN "  (MENOR ROTA)" RESET);
 
@@ -179,10 +180,10 @@ void setup_menu() {
 void main_menu() {
   draw_display(GRAPH, (RouteList){}, 0);
 
-  PRINT(BOLD "  dist                      " RESET "Calcula matriz de distâncias");
+  PRINT(BOLD "  dist                      " RESET "Calcula matriz de distancias");
   PRINT(BOLD "  conn   <id1> <id2>        " RESET "Conecta/desconecta dois pontos");
   PRINT(BOLD "  routes <id1> <id2>        " RESET "Calcula todas rotas entre duas cidades");
-  PRINT(BOLD "  count  <n> <r>            " RESET "Calcula combinações e permutações");
+  PRINT(BOLD "  count  <n> <r>            " RESET "Calcula combinacoes e permutacoes");
   PRINT(BOLD "  exit                      " RESET "Encerra o programa");
   printf("\n  :");
 
@@ -197,7 +198,7 @@ void main_menu() {
     scanf("%hu %hu", &p1, &p2);
     if (set_has(points_of_interest, p1) && set_has(points_of_interest, p2))
       relation_toggle(&relation, p1, p2);
-    else ALERT("Ponto de interesse não encontrado");
+    else ALERT("Ponto de interesse nao encontrado");
   }
   else if (!strcmp(opt, "routes")) {
     scanf("%hu %hu", &p1, &p2);
@@ -207,7 +208,7 @@ void main_menu() {
       draw_routes(l);
       routelist_free(&l);
     }
-    else ALERT("Ponto de interesse não encontrado");
+    else ALERT("Ponto de interesse nao encontrado");
   }
   else if (!strcmp(opt, "count")) {
     scanf("%hu %hu", &p1, &p2);
@@ -222,14 +223,14 @@ void main_menu() {
 
 int main() {
   FILE* f = fopen("instancia.txt", "r");
-  ASSERT(f, "Arquivo instancia.txt não encontrado");
+  ASSERT(f, "Arquivo instancia.txt nao encontrado");
 
-  ASSERT(fscanf(f, "%d", &n) == 1, "Arquivo inválido");
+  ASSERT(fscanf(f, "%d", &n) == 1, "Arquivo invalido");
   points = malloc(sizeof(Point) * n);
   scaled_points = malloc(sizeof(Point) * n);
 
   for (int i = 0; i < n; i++) {
-    ASSERT(fscanf(f, "%d %d", &points[i].x, &points[i].y) == 2, "Arquivo inválido");
+    ASSERT(fscanf(f, "%d %d", &points[i].x, &points[i].y) == 2, "Arquivo invalido");
     // Scaled points são os pontos de interesse escalados pro tamanho do display
     scaled_points[i].x = points[i].x * X_SCALE + MAX(0, X_SCALE / 2 - 1);
     scaled_points[i].y = points[i].y * Y_SCALE + Y_SCALE / 2;
