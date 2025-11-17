@@ -224,7 +224,7 @@ void main_menu() {
   if (!strcmp(opt, "dist")) {
     draw_matrix(&distances, points_of_interest, X_SCALE);
   }   
-  else if (!strcmp(opt, "coord")) {
+  else if (!strcmp(opt, "coords")) {
     draw_coords(points, n, points_of_interest);
   } 
   else if (!strcmp(opt, "conn")) {
