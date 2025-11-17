@@ -12,13 +12,37 @@
 #include "route.h"
 #include "set.h"
 
-#define MAGENTA "\033[35m"
-#define GREEN   "\033[32m"
-#define BLUE    "\033[34m"
-#define RED     "\033[31m"
-#define BOLD    "\033[1m"
-#define RESET   "\033[0m"
-#define CLEAR   "\033[H\033[J"
+#ifdef NO_ANSI
+  #undef MAGENTA
+  #undef GREEN
+  #undef BLUE
+  #undef RED
+  #undef BOLD
+  #undef RESET
+  #undef CLEAR
+  #define MAGENTA ""
+  #define GREEN   ""
+  #define BLUE    ""
+  #define RED     ""
+  #define BOLD    ""
+  #define RESET   ""
+  #define CLEAR   "\n\n\n\n\n\n\n\n"
+#else
+  #undef MAGENTA
+  #undef GREEN
+  #undef BLUE
+  #undef RED
+  #undef BOLD
+  #undef RESET
+  #undef CLEAR
+  #define MAGENTA "\033[35m"
+  #define GREEN   "\033[32m"
+  #define BLUE    "\033[34m"
+  #define RED     "\033[31m"
+  #define BOLD    "\033[1m"
+  #define RESET   "\033[0m"
+  #define CLEAR   "\033[H\033[J"
+#endif
 
 #define MAX(x, y) (x > y ? x : y)
 #define MIN(x, y) (x < y ? x : y)
