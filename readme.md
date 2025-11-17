@@ -92,6 +92,7 @@ Após ver as coordenadas, aperte **ENTER** pra sair.
 
 ![](screenshots/coords.png)
 
+---
 
 - `dist` - Calcula matriz de distâncias  
 Após ver a matriz, aperte **ENTER** pra sair.
