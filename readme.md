@@ -2,7 +2,7 @@
 
 ## TODO
 
-- [ ] refatorar essa grande merda
-- [ ] comentar tudo
+- [x] refatorar essa grande merda
+- [x] comentar tudo
 - [ ] fazer um readme
 - [ ] gravar uma demo e screenshots

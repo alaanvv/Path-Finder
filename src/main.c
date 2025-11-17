@@ -56,6 +56,8 @@ int      n, max_x = 0, max_y = 0;
 
 // ---
 
+// Essa função desenha o display principal da aplicação, como ela depende de muitas coisas, não seria prático
+// extraí-la pra outro header
 void draw_display(DisplayMode mode, RouteList l, int route_i) {
   printf(CLEAR);
 
@@ -106,6 +108,7 @@ void draw_display(DisplayMode mode, RouteList l, int route_i) {
   matrixs_free(&display);
 }
 
+// Função que mostra a tela com todos caminhos possíveis usando "paginação" (só vai pra frente)
 void draw_routes(RouteList l) {
   if (l.count == 0) {
     ALERT("Nenhuma rota encontrada");
@@ -188,7 +191,7 @@ void main_menu() {
   scanf("%s", opt);
  
   if (!strcmp(opt, "dist")) {
-    draw_distance_matrix(&distances, points_of_interest, X_SCALE);
+    draw_matrix(&distances, points_of_interest, X_SCALE);
   }  
   else if (!strcmp(opt, "conn")) {
     scanf("%hu %hu", &p1, &p2);
@@ -200,7 +203,7 @@ void main_menu() {
     scanf("%hu %hu", &p1, &p2);
     if (set_has(points_of_interest, p1) && set_has(points_of_interest, p2)) {
       // Chama a função que calcula as rotas e desenha elas
-      RouteList l = find_all_routes(p1, p2, p1, &relation);
+      RouteList l = find_all_routes(p1, p2, n, &relation);
       draw_routes(l);
       routelist_free(&l);
     }
@@ -218,7 +221,7 @@ void main_menu() {
 // ---
 
 int main() {
-  FILE *f = fopen("instancia.txt", "r");
+  FILE* f = fopen("instancia.txt", "r");
   ASSERT(f, "Arquivo instancia.txt não encontrado");
 
   ASSERT(fscanf(f, "%d", &n) == 1, "Arquivo inválido");
