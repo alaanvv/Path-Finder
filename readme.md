@@ -86,7 +86,7 @@ Pra sair da tela, aperte **ENTER**.
 
 ![](screenshots/count.png)
 
-- `count <n> <r>` - Encerra o programa
+- `exit` - Encerra o programa
 Fecha o programa
 
 ## TODO
