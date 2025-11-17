@@ -1,16 +1,11 @@
 # Path-Finder
 
-Recomendo que leia esse `readme.md` pelo github pra ter o documento  
-formatado, basta seguir esse link:  
+Recomendo que leia esse `readme.md` pelo github pra ter o documento formatado, basta seguir esse link:  
 https://github.com/alaanvv/Path-Finder
 
-Um programa **C** que gerencia rotas entre cidades usando  
-conceitos de grafos e matemática discreta.  
+Um programa **C** que gerencia rotas entre cidades usando conceitos de grafos e matemática discreta.  
 
-- **IMPORTANTE** - Esse programa foi feito usando interface no terminal,
-então caso a janela do terminal esteja muito pequena, a visualização pode   
-quebrar. 
-Além disso, o programa foi feito pra terminais com suporte **ANSI**
+- **IMPORTANTE** - Esse programa foi feito usando interface no terminal, então caso a janela do terminal esteja muito pequena, a visualização pode quebrar. Além disso, o programa foi feito pra terminais com suporte **ANSI**
 
 # Demo
 
@@ -21,9 +16,7 @@ Além disso, o programa foi feito pra terminais com suporte **ANSI**
 ## Como usar
 
 Rode o programa a partir de uma pasta contendo `instancia.txt`  
-A primeira linha desse arquivo deve conter a quantidade de pontos  
-descrito nele, e as próximas são pares de inteiros descrevendo o  
-**x** e **y** dos pontos. Ex:  
+A primeira linha desse arquivo deve conter a quantidade de pontos descrito nele, e as próximas são pares de inteiros descrevendo o **x** e **y** dos pontos. Ex:  
 
 ```
 12
@@ -41,9 +34,7 @@ descrito nele, e as próximas são pares de inteiros descrevendo o
 9 0
 ```
 
-A primeira parte do programa é a seleção dos pontos de interesse,  
-onde o usuário escolhe a partir dos pontos lidos do arquivo quais  
-ele vai querer usar no programa.
+A primeira parte do programa é a seleção dos pontos de interesse, onde o usuário escolhe a partir dos pontos lidos do arquivo quais ele vai querer usar no programa.
 
 ![](screenshots/setup.png)
 
@@ -54,13 +45,11 @@ Se o ponto já estiver marcado, ele desmarca.
 
 ![](screenshots/marked.png)
 
-Após selecionar os pontos de interesse desejados, use o comando  
-`run` pra iniciar o gerenciamento de rotas.  
+Após selecionar os pontos de interesse desejados, use o comando `run` pra iniciar o gerenciamento de rotas.  
 
 ![](screenshots/graph.png)
 
-Nessa tela, apenas os pontos de interesse são mostrados, e temos  
-acesso aos comandos do programa.  
+Nessa tela, apenas os pontos de interesse são mostrados, e temos acesso aos comandos do programa.  
 
 - `dist` - Calcula matriz de distâncias  
 Após ver a matriz, aperte **ENTER** pra sair.
@@ -76,13 +65,11 @@ Pontos conectados são mostrados com uma linha entre eles.
 
 - `routes <id1> <id2>` - Calcula todas rotas entre duas cidades  
 Digite `routes` e o índice dos pontos que você quer ver as rotas.  
-Isso vai mostrar todas as rotas possíveis, uma por vez, basta apertar  
-**ENTER** pra passar pra próxima.
+Isso vai mostrar todas as rotas possíveis, uma por vez, basta apertar **ENTER** pra passar pra próxima.
 
 ![](screenshots/routes.png)
 
-Quando uma rota for a menor possível, será mostrado uma mensagem na  
-frente da distância total.  
+Quando uma rota for a menor possível, será mostrado uma mensagem na frente da distância total.  
 
 ![](screenshots/best.png)
 
