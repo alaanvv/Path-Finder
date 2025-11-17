@@ -230,6 +230,7 @@ int main() {
 
   for (int i = 0; i < n; i++) {
     ASSERT(fscanf(f, "%d %d", &points[i].x, &points[i].y) == 2, "Arquivo inválido");
+    // Scaled points são os pontos de interesse escalados pro tamanho do display
     scaled_points[i].x = points[i].x * X_SCALE + MAX(0, X_SCALE / 2 - 1);
     scaled_points[i].y = points[i].y * Y_SCALE + Y_SCALE / 2;
     max_x = MAX(max_x, points[i].x);
