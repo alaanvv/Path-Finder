@@ -2,7 +2,7 @@
 
 Um programa **C** que gerencia rotas entre cidades usando conceitos de grafos e matemática discreta.  
 
-- **IMPORTANTE** - Esse programa foi feito usando interface no terminal, então caso a janela do terminal esteja muito pequena, a visualização pode quebrar. Além disso, o programa foi feito pra terminais com suporte **ANSI**
+- **IMPORTANTE** - Esse programa foi feito usando interface no terminal, então caso a janela do terminal esteja muito pequena, a visualização pode quebrar. Além disso, o programa foi feito pra terminais com suporte **ANSI**, mas tem uma flag de compilação que desativa os caracteres ANSI, descrita na seção "Como rodar"
 
 Recomendo que leia esse `readme.md` pelo github pra ter o documento formatado, basta seguir esse link:  
 https://github.com/alaanvv/Path-Finder
@@ -13,6 +13,37 @@ Gravei uma demonstração do programa, acabei me esquecendo de usar o comando `d
 > Clique pra assistir ou assista nos arquivos do projeto `(demo/demo.mp4)`
 
 [![Video](https://img.youtube.com/vi/VRC4jpsRCtY/maxresdefault.jpg)](https://www.youtube.com/watch?v=VRC4jpsRCtY)
+
+## Como rodar
+
+> Os executáveis já estão disponíveis nos arquivos, então o passo de compilar é opcional
+
+
+### Linux
+
+1. Compile
+`gcc src/main.c -o pathfinder-linux -lm`
+
+2. Execute
+`./pathfinder-linux`
+
+### Windows
+
+1. Compile  
+`gcc src/main.c -o pathfinder-windows.exe -lm`
+
+2. Execute  
+`pathfinder-windows.exe`
+
+---
+
+Existem duas flags especiais pra compilação
+
+- -DSAFE_CHARS - Use essa flag se quiser usar caracteres mais suportados, evitando quebrar em terminais mais limitados
+- -DNO_ANSI - Use essa flag se seu terminal não tiver suporte pra ANSI, assim o programa fica sem cores e `clear`
+
+> Exemplo de como usar as flags:
+`gcc src/main.c -o pathfinder-linux -lm -DSAFE_CHARS -DNO_ANSI`
 
 ## Como usar
 
@@ -96,27 +127,3 @@ Pra sair da tela, aperte **ENTER**.
 
 - `exit` - Encerra o programa  
 Fecha o programa
-
-## Como rodar
-
-> Os executáveis já estão disponíveis nos arquivos, então o passo de compilar é opcional
-
-### Linux
-
-1. Compile
-`gcc src/main.c -o pathfinder-linux -lm`
-
-2. Execute
-`./pathfinder-linux`
-
-### Windows
-
-1. Compile  
-`gcc src/main.c -o pathfinder-windows.exe -lm`
-
-2. Execute  
-`pathfinder-windows.exe`
-
-## TODO
-
-- [ ] Fazer versões linux e windows
